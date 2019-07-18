@@ -57,12 +57,16 @@ public class ContactRepository {
             @Override
             public void onResponse(Call<List<Contact>> call, Response<List<Contact>> response) {
                 List<Contact>contactList=response.body();
-                for(Contact c : contactList){
-                    String nama = c.getName();
-                    String telp = c.getPhoneNumber();
 
-                    Log.d("Buku Kontak","Nama= "+nama+" Telp= "+telp );
-                }
+                /*for(Contact contact = response.body()){
+                    new SaveContactTask().execute(c);
+                }*/
+
+                Contact [] arrContact = new Contact[contactList.size()];
+                for(int i=0;i<arrContact.length;i++){
+                    arrContact [i] = contactList.get(i);
+                }new SaveContactTask().execute(arrContact);
+
             }
 
             @Override
