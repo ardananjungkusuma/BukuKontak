@@ -28,6 +28,6 @@ public class MainViewModel extends AndroidViewModel {
 
     //untuk menyimpan kontak
     public void saveContact(Contact contact){
-
+        this.contactRepository.saveContact(contact);
     }
 }

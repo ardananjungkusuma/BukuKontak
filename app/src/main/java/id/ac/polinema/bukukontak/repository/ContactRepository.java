@@ -56,17 +56,13 @@ public class ContactRepository {
         contactListCall.enqueue(new Callback<List<Contact>>() {
             @Override
             public void onResponse(Call<List<Contact>> call, Response<List<Contact>> response) {
+                //hapus dulu semua database sebelum download
+                new DeleteAllContacts().execute();
                 List<Contact>contactList=response.body();
-
-                /*for(Contact contact = response.body()){
-                    new SaveContactTask().execute(c);
-                }*/
-
                 Contact [] arrContact = new Contact[contactList.size()];
                 for(int i=0;i<arrContact.length;i++){
                     arrContact [i] = contactList.get(i);
                 }new SaveContactTask().execute(arrContact);
-
             }
 
             @Override
@@ -89,8 +85,11 @@ public class ContactRepository {
         protected Void doInBackground(Contact... contacts) {
             ContactDao dao = database.contactDao();
             //ambil kontak pertama dari parameter
-            Contact c = contacts[0];
-            dao.addNew(c);
+
+            for(int i=0;i<contacts.length;i++){
+                Contact c = contacts[i];
+                dao.addNew(c);
+            }
             return null;
         }
     }
@@ -103,11 +102,31 @@ public class ContactRepository {
         }
     }
 
+    private class DeleteAllContacts extends AsyncTask<Void,Void,Void>{
+        @Override
+        protected Void doInBackground(Void... voids) {
+            //hapus data lewat DAO
+            database.contactDao().removeAll();
+
+            return null;
+        }
+    }
     private void saveContactToWeb(Contact contact) {
+        Call<Contact>postContactCall=this.service.postContact(contact);
+        postContactCall.enqueue(new Callback<Contact>() {
+            @Override
+            public void onResponse(Call<Contact> call, Response<Contact> response) {
+                getContactListFromWeb();
+            }
+
+            @Override
+            public void onFailure(Call<Contact> call, Throwable t) {
+
+            }
+        });
     }
 
     private void saveContactToDb(Contact contact) {
-        //todo : perbaiki ini agar nanti asynchronous
         new SaveContactTask().execute(contact);
     }
 }
