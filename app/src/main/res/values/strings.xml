@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">BukuKontak</string>
     <string name="image_link">Image Link :</string>
+    <string name="username">Username</string>
+    <string name="login_or_sign_up">Login or Sign Up</string>
+    <string name="enter_your_password">Enter Your Password</string>
 </resources>

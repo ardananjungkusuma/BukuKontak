@@ -5,5 +5,57 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
+    <TextView
+        android:id="@+id/titleLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/login_or_sign_up"
+        android:layout_marginTop="50dp"
+        android:textSize="40sp"
+        app:layout_constraintRight_toRightOf="parent"/>
+    <TextView
+        android:id="@+id/txv_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleLogin"
+        android:text="@string/username"
+        android:textSize="20sp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="40dp"/>
+    <EditText
+        android:id="@+id/edt_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/txv_username"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:hint="Enter Your Username"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"/>
+    <TextView
+        android:id="@+id/txv_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_username"
+        android:text="Password"
+        android:textSize="20sp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="40dp"/>
+    <EditText
+        android:id="@+id/edt_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/txv_password"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:hint="@string/enter_your_password"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
