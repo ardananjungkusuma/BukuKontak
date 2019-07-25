@@ -5,22 +5,33 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
     <TextView
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/image"
         android:id="@+id/txv_name"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nama"/>
 
     <TextView
         app:layout_constraintTop_toBottomOf="@+id/txv_name"
+        app:layout_constraintLeft_toRightOf="@+id/image"
         android:id="@+id/txv_phone"
         android:textSize="14sp"
         android:textStyle="normal"
-        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="081-123-456"/>
 

@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity
     private RecyclerView recyclerContactList;
     private EditText edtName;
     private EditText edtPhone;
+    private EditText edtImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity
 
         this.edtName = this.findViewById(R.id.edt_name);
         this.edtPhone = this.findViewById(R.id.edt_phone);
+        this.edtImage = this.findViewById(R.id.edt_image);
 
         // Load data ke recycler View
         /*this.recyclerContactListAdapter.setContactList(this.contactList);*/
@@ -88,8 +90,9 @@ public class MainActivity extends AppCompatActivity
     {
         String name = this.edtName.getText().toString();
         String phoneNumber = this.edtPhone.getText().toString();
+        String image = this.edtImage.getText().toString();
 
-        Contact c = new Contact(name, phoneNumber);
+        Contact c = new Contact(name, phoneNumber,image);
 
         return c;
     }

@@ -28,10 +28,16 @@ public class Contact
     @SerializedName("phone_number")
     private String phoneNumber;
 
-    public Contact(String name, String phoneNumber)
+    @ColumnInfo(name="image")
+    @Expose
+    @SerializedName("image")
+    private String image;
+
+    public Contact(String name, String phoneNumber,String image)
     {
         this.name = name;
         this.phoneNumber = phoneNumber;
+        this.image = image;
     }
 
     public int getId() {
@@ -56,5 +62,13 @@ public class Contact
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

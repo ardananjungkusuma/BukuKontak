@@ -1,13 +1,14 @@
 package id.ac.polinema.bukukontak.adapter;
 
 import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
+import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import id.ac.polinema.bukukontak.R;
@@ -64,9 +65,11 @@ public class RecyclerContactListAdapter extends RecyclerView.Adapter<ContactItem
         // Pasang datanya di ViewHolder saat ini
         String name = currentContact.getName();
         String phoneNumber = currentContact.getPhoneNumber();
+        String image = currentContact.getImage();
 
         holder.getTxvName().setText(name);
         holder.getTxvPhone().setText(phoneNumber);
+        Picasso.get().load(image).placeholder(R.drawable.ic_launcher_background).into(holder.getTxvImage());//todo : picasso
     }
 
     @Override
