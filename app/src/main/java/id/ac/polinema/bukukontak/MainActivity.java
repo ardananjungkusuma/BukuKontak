@@ -49,10 +49,6 @@ public class MainActivity extends AppCompatActivity
     private void initData()
     {
         this.contactList = new ArrayList<>();
-
-        // Tambahin dummy data..
-        /*this.contactList.add(new Contact("Alan Walker", "0857-123-456"));*/
-
         // Seting recycler view-nya
         this.recyclerContactListAdapter = new RecyclerContactListAdapter(this);
     }

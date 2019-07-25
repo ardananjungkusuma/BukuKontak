@@ -14,7 +14,6 @@ import java.util.List;
 
 import id.ac.polinema.bukukontak.R;
 import id.ac.polinema.bukukontak.data.Account;
-import id.ac.polinema.bukukontak.data.Contact;
 
 public class RecyclerAccountListAdapter extends RecyclerView.Adapter<AccountItemViewHolder> { //todo : terakhir sampe sini gan
     private Context context;
@@ -52,33 +51,33 @@ public class RecyclerAccountListAdapter extends RecyclerView.Adapter<AccountItem
         AccountItemViewHolder vhAccountItem = new AccountItemViewHolder(accountItemView);
 
         // Jadikan nilai balik method ini
-        return vhContactItem;
+        return vhAccountItem;
     }
 
     // Ketika sedang me-render satu-persatu baris dari RecyclerView-nya...
     // Terjadi pe-renderan view holder satu persatu juga.
     @Override
-    public void onBindViewHolder(@NonNull ContactItemViewHolder holder, int position)
+    public void onBindViewHolder(@NonNull AccountItemViewHolder holder, int position)
     {
         // Dapatkan data di posisi saat ini...
-        Contact currentContact = this.contactList.get(position);
+        Account currentAccount = this.accountList.get(position);
 
         // Pasang datanya di ViewHolder saat ini
-        String name = currentContact.getName();
-        String phoneNumber = currentContact.getPhoneNumber();
-        String image = currentContact.getImage();
+        String username = currentAccount.getUsername();
+        String password = currentAccount.getPassword();
+        String address = currentAccount.getAddress();
 
-        holder.getTxvName().setText(name);
-        holder.getTxvPhone().setText(phoneNumber);
-        Picasso.get().load(image).placeholder(R.drawable.ic_launcher_background).into(holder.getTxvImage());//todo : picasso
+        holder.getTxvUsername().setText(username);
+        holder.getTxvPassword().setText(password);
+        holder.getTxvAddress().setText(address);
     }
 
     @Override
     public int getItemCount()
     {
-        if(this.contactList == null)
+        if(this.accountList== null)
             return 0;
         else
-            return this.contactList.size();
+            return this.accountList.size();
     }
 }

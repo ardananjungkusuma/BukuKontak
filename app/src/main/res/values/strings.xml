@@ -4,4 +4,6 @@
     <string name="username">Username</string>
     <string name="login_or_sign_up">Login or Sign Up</string>
     <string name="enter_your_password">Enter Your Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="login">LOGIN</string>
 </resources>

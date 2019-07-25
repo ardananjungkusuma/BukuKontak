@@ -12,7 +12,6 @@ import id.ac.polinema.bukukontak.data.Account;
 import id.ac.polinema.bukukontak.data.AccountDao;
 import id.ac.polinema.bukukontak.data.AppDatabase;
 import id.ac.polinema.bukukontak.data.AppDbProvider;
-import id.ac.polinema.bukukontak.data.Contact;
 import id.ac.polinema.bukukontak.remotedata.AppServiceProvider;
 import id.ac.polinema.bukukontak.remotedata.BukuKontakService;
 import retrofit2.Call;
