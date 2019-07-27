@@ -13,6 +13,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
     }
 
-    public void clickLogin(View view) {
+    public void clickLogin(View view) {//todo mikir method opo sing digae nyeluk , barno autentikasi nggawe If else
+
     }
 }
